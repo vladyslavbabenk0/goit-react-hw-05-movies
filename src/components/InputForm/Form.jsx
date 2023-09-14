@@ -7,28 +7,16 @@ const Form = ({ setSearchParams }) => {
   const [query, setQuery] = useState('');
 
   useEffect(() => {
-
     const storedQuery = localStorage.getItem('storedQuery');
 
     if (storedQuery) {
       setQuery(storedQuery);
     }
-
-    const handleBeforeUnload = () => {
-      localStorage.removeItem('storedQuery');
-    };
-
-    window.addEventListener('beforeunload', handleBeforeUnload);
-
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-    };
-  }, []);
+  }, []); // This useEffect only runs once when the component mounts
 
   const handleInput = (evt) => {
     const inputValue = evt.target.value;
     setQuery(inputValue);
-    localStorage.setItem('storedQuery', inputValue);
   };
 
   const handleSubmit = (evt) => {
@@ -37,6 +25,7 @@ const Form = ({ setSearchParams }) => {
       Notiflix.Notify.info('Please enter your request');
     } else {
       setSearchParams({ query });
+      localStorage.setItem('storedQuery', query); // Store the query on form submission
     }
   };
 
