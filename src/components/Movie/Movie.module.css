@@ -4,17 +4,16 @@
 
 .linkContainer {
     margin-bottom: 20px;
-
 }
 
 .back {
     padding: 5px;
-    background-color: #97010E;
+    background-color: #172CAF;
     transition: all 0.3s;
 }
 
 .back:hover {
-    background-color: #F34C3F;
+    background-color: #707ED7;
 }
 
 .generalContainer {

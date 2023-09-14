@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import Form from '../../components/Form';
+import Form from '../../components/InputForm';
 import { fetchMovies } from 'services/api';
 import Loader from 'components/Loader';
 import MoviesList from '../../components/MoviesList';
@@ -14,7 +14,7 @@ const MoviesPage = () => {
 
   useEffect(() => {
     const query = searchParams.get('query');
-    if (!query) return;
+      if (!query) return;
 
     const fetchMovieByQuery = async () => {
       try {

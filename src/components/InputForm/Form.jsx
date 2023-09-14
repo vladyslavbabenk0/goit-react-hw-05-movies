@@ -1,44 +1,58 @@
 import { useState, useEffect } from 'react';
-import Notiflix from 'notiflix';
 import style from './Form.module.css';
+import Notiflix from 'notiflix';
 import PropTypes from 'prop-types';
 
 const Form = ({ setSearchParams }) => {
   const [query, setQuery] = useState('');
 
   useEffect(() => {
+
     const storedQuery = localStorage.getItem('storedQuery');
+
     if (storedQuery) {
       setQuery(storedQuery);
     }
+
+    const handleBeforeUnload = () => {
+      localStorage.removeItem('storedQuery');
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
   }, []);
 
-  const handleInput = e => {
-    const inputValue = e.target.value;
+  const handleInput = (evt) => {
+    const inputValue = evt.target.value;
     setQuery(inputValue);
     localStorage.setItem('storedQuery', inputValue);
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
     if (!query) {
       Notiflix.Notify.info('Please enter your request');
     } else {
       setSearchParams({ query });
     }
   };
+
   return (
-    <form className={style.form} onSubmit={handleSubmit}>
+    <form className={style.inputform} onSubmit={handleSubmit}>
       <input
         className={style.input}
         type="text"
-        placeholder="Enter the movie title"
+        placeholder="Enter title"
         value={query}
+        autoFocus
         onChange={handleInput}
         autoComplete="off"
-        autoFocus
       />
-      <button className={style.btn} type="submit">
+
+      <button className={style.button} type="submit">
         Search
       </button>
     </form>

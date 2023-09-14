@@ -1,30 +1,32 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { fetchReviews } from 'services/api';
-import Loader from 'components/Loader/Loader';
 import style from './Reviews.module.css';
+import Loader from 'components/Loader/Loader';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
+  const { movieId } = useParams();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const { movieId } = useParams();
 
   useEffect(() => {
-    const fetchReviewsList = async () => {
+    const fetchData = async () => {
       try {
         setError(null);
         setLoading(true);
-        const data = await fetchReviews(movieId);
-        setReviews(data);
+        const reviewsData = await fetchReviews(movieId);
+        setReviews(reviewsData);
       } catch (error) {
         setError(error.message);
       } finally {
         setLoading(false);
       }
     };
-    fetchReviewsList();
+  
+    fetchData();
   }, [movieId]);
+  
   return (
     <div className={style.container}>
       {loading ? (

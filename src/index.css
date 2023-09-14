@@ -6,8 +6,8 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   font-size: 20px;
-  background-color: #5A6B5D;
-  color: #E1E1E1;
+  background-color: #de9f02;
+  color: #efe8e8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -26,9 +26,10 @@ li {
 }
 
 a {
+  color: #efe8e8;
   text-decoration: none;
-  color: #E1E1E1;
 }
+
 
 h1, h2, h3, h4, h5, h6, p, ul {
   margin: 0;

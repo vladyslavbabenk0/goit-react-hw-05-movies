@@ -6,9 +6,13 @@ export const StyledNavLink = styled(NavLink)`
   display: inline-block;
   font-size: 20px;
   transition: all 0.3s;
+  border: 1px solid white;
 
   &.active {
-    background-color: #97010e;
+    background-color: #172CAF;
     font-size: 25px;
+    border: 0px solid ;
   }
+
+  styled
 `;
