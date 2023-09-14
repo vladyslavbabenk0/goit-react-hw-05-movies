@@ -1,0 +1,61 @@
+.container {
+    margin: 20px;
+}
+
+.linkContainer {
+    margin-bottom: 20px;
+
+}
+
+.back {
+    padding: 5px;
+    background-color: #97010E;
+    transition: all 0.3s;
+}
+
+.back:hover {
+    background-color: #F34C3F;
+}
+
+.generalContainer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+
+img {
+    width: 250px;
+    border-radius: 25px;
+}
+
+h3 {
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+
+.rating {
+   margin-bottom: 10px;
+}
+
+.genres {
+    margin-bottom: 5px;
+}
+
+.listGenres {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.overview {
+    margin-bottom: 5px;
+}
+
+.infoList {
+    height: 30px;
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}

@@ -1,0 +1,24 @@
+.form {
+    display: flex;
+    gap: 10px;
+    height: 40px;
+}
+
+.input {
+    font-size: inherit;
+    width: 300px;
+
+}
+
+.btn {
+    font-size: inherit;
+    background-color: #97010E;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background-color: #F34C3F;
+}

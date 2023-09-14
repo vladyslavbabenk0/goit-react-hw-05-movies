@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.home {
+    color: #F34C3F;
+    text-decoration: underline;
+    transition: all 0.3s;
+}
+
+.home:hover {
+    color: #97010E;
+}
