@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/54.a74d4ddc.chunk.css","mappings":"AAAA,2BACG,WACH,CACA,4BAEI,YAAa,CACb,qBAAsB,CACtB,OAAQ,CAHR,eAIJ","sources":["pages/HomePage/HomePage.module.css"],"sourcesContent":[".container {\n   margin: 20px;\n}\n.trendsList {\n    margin-top: 20px;\n    display: flex;\n    flex-direction: column;\n    gap: 5px;\n}"],"names":[],"sourceRoot":""}
