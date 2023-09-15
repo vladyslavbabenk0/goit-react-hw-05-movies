@@ -2,17 +2,28 @@ import { useState, useEffect } from 'react';
 import style from './Form.module.css';
 import Notiflix from 'notiflix';
 import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
 
 const Form = ({ setSearchParams }) => {
   const [query, setQuery] = useState('');
+  const location = useLocation();
+  // useEffect(() => {
+  //   const storedQuery = localStorage.getItem('storedQuery');
+
+  //   if (storedQuery) {
+  //     setQuery(storedQuery);
+  //   }
+  // }, []);
 
   useEffect(() => {
-    const storedQuery = localStorage.getItem('storedQuery');
+    
+    const isMoviePage = location.pathname.startsWith('/movies/'); 
 
-    if (storedQuery) {
-      setQuery(storedQuery);
+    if (isMoviePage) {
+
+      setQuery('');
     }
-  }, []);
+  }, [location.pathname]);
 
   const handleInput = (evt) => {
     const inputValue = evt.target.value;
