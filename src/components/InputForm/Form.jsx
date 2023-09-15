@@ -12,8 +12,7 @@ const Form = ({ setSearchParams }) => {
     if (storedQuery) {
       setQuery(storedQuery);
     }
-  }, []); 
-
+  }, []);
   const handleInput = (evt) => {
     const inputValue = evt.target.value;
     setQuery(inputValue);
@@ -26,6 +25,7 @@ const Form = ({ setSearchParams }) => {
     } else {
       setSearchParams({ query });
       localStorage.setItem('storedQuery', query);
+      setQuery(''); 
     }
   };
 
